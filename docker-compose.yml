@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  mailhog_adapter.app:
+    image: ambientum/php:7.0-apache
+    volumes:
+      - .:/var/www/app/public
+    ports:
+      - "5621:8080"
