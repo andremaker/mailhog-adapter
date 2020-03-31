@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  mailhog_adapter.app:
+  mailhog_adapter:
     image: ambientum/php:7.0-apache
     volumes:
       - .:/var/www/app/public
