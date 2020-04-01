@@ -1,6 +1,5 @@
 <?php
 
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -30,7 +29,13 @@ $subject = $params['subject'];
 $msg = $params['message'];
 
 $mail = new PHPMailer;
-$mail->isSendmail();
+
+$mail->isSMTP();
+$mail->SMTPDebug = 4;
+$mail->Host = '125.0.0.1';
+$mail->SMTPAuth = false;
+$mail->Port = 1025;
+
 $mail->setFrom($from['email'], $from['name']);
 $mail->addAddress($to['email'], $to['name']);
 
